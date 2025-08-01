@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visitor Info Table</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    table {
+      background-color: white;
+      color: #333;
+      border-collapse: collapse;
+      width: 80%;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+    th {
+      background-color: #2575fc;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visitor Information</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>IP Address</th>
+        <th>User Agent</th>
+        <th>Time of Visit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for visitor in visitors %}
+      <tr>
+        <td>{{ visitor.ip }}</td>
+        <td>{{ visitor.user_agent }}</td>
+        <td>{{ visitor.time }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
