@@ -23,7 +23,7 @@
       background-color: white;
       color: #333;
       border-collapse: collapse;
-      width: 80%;
+      width: 95%;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       border-radius: 8px;
       overflow: hidden;
@@ -47,16 +47,30 @@
     <thead>
       <tr>
         <th>IP Address</th>
+        <th>Message</th>
+        <th>User Name</th>
+        <th>Geo Location</th>
         <th>User Agent</th>
-        <th>Time of Visit</th>
+        <th>Time</th>
+        <th>Referrer</th>
+        <th>Language</th>
+        <th>Method</th>
+        <th>Path</th>
       </tr>
     </thead>
     <tbody>
       {% for visitor in visitors %}
       <tr>
         <td>{{ visitor.ip }}</td>
+        <td>{{ visitor.message }}</td>
+        <td>{{ visitor.username }}</td>
+        <td>{{ visitor.geo }}</td>
         <td>{{ visitor.user_agent }}</td>
         <td>{{ visitor.time }}</td>
+        <td>{{ visitor.referrer }}</td>
+        <td>{{ visitor.language }}</td>
+        <td>{{ visitor.method }}</td>
+        <td>{{ visitor.path }}</td>
       </tr>
       {% endfor %}
     </tbody>
